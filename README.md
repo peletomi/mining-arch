@@ -1,3 +1,3 @@
 ```
-ansible-playbook site.yml --ask-become-pass
+ansible-playbook playbook.yml --ask-become-pass
 ```
