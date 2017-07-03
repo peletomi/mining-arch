@@ -1,0 +1,7 @@
+---
+- 
+    hosts: all
+    tasks:
+    - pacman: name=netdata state=installed
+      become: yes
+      become_method: sudo
