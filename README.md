@@ -1,3 +1,6 @@
+sudo groupadd sudo
+sudo usermod -a -G sudo pele
+
 Node:
 1. Install [Antergos](antergos.com)
 2. Enable ssh service:

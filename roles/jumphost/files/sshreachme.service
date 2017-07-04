@@ -1,0 +1,8 @@
+[Unit]
+Description=sshreachme ssh jump host
+Documentation=https://sshreach.me/init/default/docs
+After=network.target
+
+[Service]
+Type=simple
+ExecStart="-/usr/bin/python2 /opt/sshreachme.py /etc/ssh/sshreach" 

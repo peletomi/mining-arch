@@ -1,1 +1,5 @@
-playbook.retry
+*.retry
+inventory
+sshreachme.py
+ssh-keys/
+.vscode/

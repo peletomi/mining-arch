@@ -1,0 +1,33 @@
+- name: Install pip
+  become: yes
+  pacman:
+    name: python2-pip
+    state: present
+
+- name: Installing urllib2
+  become: yes
+  pip:
+    name: urllib2
+    executable: pip2
+
+- name: Copying sshreachme script to destination
+  become: yes
+  copy:
+    src: "{{ role_path }}/files/sshreachme.py"
+    dest: /opt/
+    mode: "u=rx,g=rx,o=rx"
+
+- name: Copying sshreachme init script to destination
+  become: yes
+  copy:
+    src: "{{ role_path }}/files/sshreachme.service"
+    dest: /etc/systemd/system/
+    mode: "u=rx,g=rx,o=rx"
+
+- name: Enabling and starting sshreachme service
+  become: yes
+  systemd:
+    name: sshreachme
+    daemon_reload: yes
+    state: started
+    enabled: yes
